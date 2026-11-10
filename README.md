@@ -14,7 +14,6 @@ Built with Nuxt (Vue + TypeScript), Neon Postgres, and Vercel Blob.
 | `app/pages/index.vue` | Home: pick a frame |
 | `app/pages/booth/[id]/index.vue` | Photo screen: camera, countdown, upload, retake |
 | `app/pages/booth/[id]/result.vue` | Result: download, back to edit, home |
-| `app/pages/admin/` | Login and dashboard |
 | `app/utils/detectSlots.ts` | Finds transparent photo slots in a frame PNG |
 | `app/utils/photo.ts` | Photo placement, capture, HEIC handling, final JPEG |
 | `server/api/` | Public frame API, auth, admin frame API |

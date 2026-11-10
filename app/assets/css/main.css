@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Porkys';
+  src: url('/fonts/porkys.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Palette */
+  --c-light-blue: #dcecfb;
+  --c-light-pink: #ffedf3;
+  --c-blue: #a2d2ff;
+  --c-pink: #ffafcc;
+  --c-pink-dark: #f675a4;
+  --c-white: #ffffff;
+  --c-gray: #d4d4d4;
+  --c-black: #1a1a1a;
+  --c-purple: #cdb4db;
+
+  /* From Figma's system colors */
+  --c-danger: #ef4444;
+  --c-danger-border: #d93e3e;
+  --c-warning: #f59e0b;
+  --c-text-inverse: #fcfcfc;
+  --c-surface: #fdfdfd;
+  --c-muted: #919191;
+  --c-input-border: #535353;
+  --c-placeholder-bg: #d9d9d9;
+
+  --radius-s: 12px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+
+  --shadow-card: 0 20px 25px rgba(0, 0, 0, 0.12), 0 0 15px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+  --page-gutter: 60px;
+  --logo-size: 96px;
+  --focus-ring: 0 0 0 3px var(--c-white), 0 0 0 6px var(--c-pink-dark);
+
+  color-scheme: light;
+}
+
+@media (max-width: 900px) {
+  :root { --page-gutter: 32px; --logo-size: 72px; }
+}
+
+@media (max-width: 600px) {
+  :root { --page-gutter: 16px; --logo-size: 52px; }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--c-light-blue);
+  color: var(--c-black);
+  font-family: 'Porkys', 'Arial Rounded MT Bold', 'Trebuchet MS', system-ui, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, p { margin: 0; font-weight: 400; }
+
+button, input, select, textarea {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+
+img { display: block; max-width: 100%; }
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Figma draws a black outline around Porkys text. paint-order keeps the fill on top so
+   the stroke only shows outside the letters. */
+.outlined {
+  -webkit-text-stroke: var(--stroke, 2px) var(--c-black);
+  paint-order: stroke fill;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

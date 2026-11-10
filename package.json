@@ -1,0 +1,28 @@
+{
+  "name": "cleekin",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "db:migrate": "node scripts/migrate.mjs",
+    "hash-password": "node scripts/hash-password.mjs"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.9.0",
+    "heic2any": "^0.0.4",
+    "lucide-vue-next": "^1.0.0",
+    "nuxt": "^4.6.4",
+    "nuxt-auth-utils": "^0.6.2",
+    "postgres": "^4.1.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "~5.9.3",
+    "vue-tsc": "^3.3.14"
+  }
+}
